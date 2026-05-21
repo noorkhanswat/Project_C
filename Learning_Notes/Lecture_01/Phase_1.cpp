@@ -28,11 +28,21 @@ class student{
 };
 
 int main() {
-    student s1(1, "Alice");
-    s1.show();
-
-    student s2(2, "Bob");
-    s2.show();
+    
+    student* s[5]; // Array of pointers to student objects
+    for (int i = 0; i < 5; i++) {
+        int roll;
+        char name[100]; // Temporary buffer to hold the name input
+        cout << "Enter roll number and name for student " << (i + 1) << ": ";
+        cin >> roll >> name; // Read roll number and name from user input
+        s[i] = new student(roll, name); // Create a new student object and store its pointer in the array
+    }
+    for(int i = 0; i < 5; i++) {
+        s[i]->show(); // Display the details of each student
+    }
+    for(int i = 0; i < 5; i++) {
+        delete s[i]; // Deallocate memory for each student object to prevent memory leaks
+    }
 
     return 0;
 }
