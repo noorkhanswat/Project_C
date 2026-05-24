@@ -7,7 +7,7 @@ class student{
      char* name; // Raw pointer to a character array (string) dynamically allocated the memory  
      Date dob; // Date of birth as a member variable of type Date
     public:
-    student (const char* n, int d, int m, int y) : dob {d, m, y} {
+    student (const char* n, int d, int m, int y) : dob(d, m, y) {
         name = new char[strlen(n) + 1]; // Allocate memory for the name with addition of 1 for the null terminator
         strcpy(name, n); // Copy the name to the allocated memory , ensuring that the original string can be safely modified or deallocated without affecting the student object.   
     }
