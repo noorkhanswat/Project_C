@@ -4,11 +4,11 @@ class base{
     private:
      int id;
     protected:
-    string name;
-    int age;
+        string name;
+        int age;
     public:
-     void set(string n, int a, int Id){ name =n; age =a; id=Id;}
-     int getId(){ return id;}
+        void set(string n, int a, int Id){ name =n; age =a; id=Id;}
+        int getId(){ return id;}
     
 };
  class student: public base{
